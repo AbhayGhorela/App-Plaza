@@ -12,7 +12,7 @@ function DownloadSection() {
       try {
         const apps = [];
         for (let i = 0; i < 20; i++) {
-          const response = await axios.get('http://localhost:3001/api/getRandomAppData');
+          const response = await axios.get('http://app-plaza-backend.vercel.app/api/getRandomAppData');
           apps.push(response.data);
         }
         setAppData(apps);

@@ -16,7 +16,7 @@ function FeaturedAppSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/getRandomAppData');
+        const response = await axios.get('http://app-plaza-backend.vercel.app/api/getRandomAppData');
         setAppData([response.data]); // Wrap the response.data in an array
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -28,7 +28,7 @@ function FeaturedAppSection() {
       const apps = [];
       for (let i = 0; i < 3; i++) {
         try {
-          const response = await axios.get('http://localhost:3001/api/getRandomAppData');
+          const response = await axios.get('http://app-plaza-backend.vercel.app/api/getRandomAppData');
           apps.push(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);
