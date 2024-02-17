@@ -4,15 +4,22 @@
 
 /* contact page */
 
+.container-contact{
+  background-color: rgb(29, 3, 61);
+}
 textarea[placeholder]{
     padding-left: 15px;
   }
 input[placeholder]{
-    padding-left: 15px;
+    padding-left: 18px;
   }
 
 
 /* featured app section */
+.main{
+  overflow-x: hidden;
+  background-color: rgb(29, 3, 61);
+}
 
 .hero{
   background-image:url('/bg2.jpg');
@@ -24,14 +31,16 @@ input[placeholder]{
   position: relative;
 }
 
+.container-apps{
+  border-radius: 10px;
+}
+
 .hero-img{
   width: 40%;
   height: 90%;
   position: absolute;
   right: 10px;
   filter: drop-shadow(3px 5px 8px rgb(0, 0, 0));
-  
-  
 }
 
 .hero-h1{
@@ -42,7 +51,7 @@ input[placeholder]{
   color: rgb(255, 255, 255);
   padding-top: 60px;
   padding-left: 40px;
-  /* text-shadow: 3px 3px black; */
+  
 }
 
 
@@ -61,6 +70,7 @@ input[placeholder]{
 .Our-site{
   background-color: white;
   margin-top: 40px;
+  border-radius: 18px;
 }
 
 .Os-h1{
@@ -69,8 +79,8 @@ input[placeholder]{
   text-align: center;
 }
 .Os-p{
-  font-size: 28px;
-  padding: 15px 15px 25px;
+  font-size: 22px;
+  padding: 20px 50px 25px;
   text-align: center;
 }
 
@@ -82,26 +92,233 @@ input[placeholder]{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border-radius: 18px 18px 0px 0px;
 }
 
 .down-h1{
   text-align: center;
   font-size: 40px;
   font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .btn{
-  background-color: lime;
-  font-size: 30px;
-  padding: 15px;
+  background-color: rgb(52, 54, 52);
+  color:white;
+  font-size: 20px;
+  padding: 10px 35px;
   border-radius: 40px;
   margin:15px auto 20px;
   font-weight: 700;
   border: none;
+  margin: buttom 30px;
 }
 .btn:hover{
-  background-color: rgb(218, 76, 76);
+  background-color: rgb(36, 34, 34);
 }
 .btn:active{
-  border: 2px solid lime;
+  border: 2px solid rgb(218, 76, 76);
+}
+
+
+
+/* Media queries for responsiveness */
+@media (max-width: 500px) {
+  .hero-img{
+    position:relative;
+    width: 85%;
+    height: 45%;
+  }
+
+  .hero{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .hero-h1 {
+    font-size: 40px;
+    width:100%;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  .hero-h2{
+    width: 100%;
+    font-size: 20px;
+    padding: 20px 20px;
+    text-align: center;
+  }
+
+  /* our site div */
+
+  .Os-h1{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .Os-p{
+    font-size: 25px;
+    padding: 15px 15px 25px;
+    text-align: center;
+  }
+
+  /* download section */
+
+  .down-h1{
+    padding: 10px 5px;
+    font-size: 30px;
+  }
+
+  .btn{
+    font-size: 20px;
+    padding: 16px;
+    border-radius: 15px;
+  }
+
+
+
+}
+
+
+/* Toggler Button Styles */
+.burger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+  z-index: 10;
+}
+
+.burger-line {
+  width: 100%;
+  height: 0.15rem;
+  background: white;
+  transition: all 0.3s linear;
+}
+
+/* Animation for Toggler Lines */
+.burger.show .burger-line:nth-child(1) {
+  transform: rotate(45deg) translate(0.35rem, 0.35rem);
+}
+
+.burger.show .burger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.show .burger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(0.35rem, -0.35rem);
+}
+
+/* Navbar Styles */
+.navbar {
+  display: none;
+  position: absolute;
+  top: 3.5rem; /* Adjust the top position as needed */
+  left: 0;
+  right: 0;
+  background-color: #111; /* Adjust background color as needed */
+  z-index: 1000; /* Ensure it's above other content */
+  flex-direction: column;
+  padding-bottom: 4px;
+}
+
+.navbar.show {
+  display: flex;
+}
+
+.nav-link,.profile {
+  padding: 1rem;
+}
+
+.log{
+  margin:1rem;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background-color: transparent;
+    align-items:center;
+  }
+
+  .burger {
+    display: none;
+  }
+}
+
+
+/* About us  */
+.main-div-about{
+  background-color: rgb(29, 3, 61);
+}
+
+.about-people-img,.about-logo-img{
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+:hover.about-logo-img{
+  filter: drop-shadow(2px 4px 7px black);
+}
+:hover.about-people-img{
+  filter: drop-shadow(2px 4px 7px black);
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .image{
+    background-color: white;
+    border-radius: 30px 0 0 30px;
+    margin-left: 10px;
+  }
+
+  .about-us{
+    background-color: white;
+    border-radius: 0 30px 30px 0;
+    margin-right: 10px 
+  }
+
+  .join{
+    background-color: white;
+    border-radius: 30px 30px 0px 0px;
+    margin-left: 10px;
+    margin-right: 10px 
+  }
+}
+
+  @media (max-width: 500px) {
+  .container-about{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .image,.about-us{
+    border-radius: 30px;
+    background-color: white
+  }
+  .join{
+    border-radius: 30px 30px 0px 0px;
+    background-color: white;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .about-us{
+    margin-top: 15px;
+  }
+}
+
+/* download app section  */
+.main-section-download{
+  background-color: rgb(29, 3, 61);
 }

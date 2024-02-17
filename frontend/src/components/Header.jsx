@@ -1,61 +1,57 @@
-// Header.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from "../assets/logo.png"
+import logo from "../assets/logo.png";
 import { useAuth0 } from "@auth0/auth0-react";
+import './style.css';
 
 function Header() {
-
-  const { user, loginWithRedirect, logout, isAuthenticated} = useAuth0();
+  const { user, loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const [showNavbar, setShowNavbar] = useState(false);
 
   return (
-    <header className="bg-zinc-900 text-white p-4">
+    <header className="bg-zinc-900 text-white p-2 fixed top-0 z-10 w-full">
       <div className="container mx-auto flex items-center justify-between">
-        <div className='brand flex justify-start items-center gap-4'>
-          <img src={logo} alt="Brand Logo" className="w-8 h-8 rounded-full" />
-          <Link to="/" className="text-xl font-bold">
+        <div className='brand-nav flex justify-start items-center gap-4'>
+          <img src={logo} alt="Brand Logo" className="brand-nav-logo w-8 h-8 rounded-full" />
+          <Link to="/" className="brand-text text-xl font-bold">
             App Plaza
           </Link>
         </div>
-        <nav className='flex items-center gap-4 font-bold'>
-          
-          
-          <Link to="/" className="">
+        <button
+          className="burger"
+          onClick={() => setShowNavbar(!showNavbar)}
+          aria-label="Toggle Navigation"
+        >
+          <span className="burger-line"></span>
+          <span className="burger-line"></span>
+          <span className="burger-line"></span>
+        </button>
+        <nav className={`navbar ${showNavbar ? 'show' : ''}`}>
+          <Link to="/" className="nav-link">
             Home
           </Link>
-          <Link to="/about" className="">
+          <Link to="/about" className="nav-link">
             About
           </Link>
-          <Link to="/contact" className="">
+          <Link to="/contact" className="nav-link">
             Contact
           </Link>
-          {
-            isAuthenticated && <Link to="/download" className="">
-            Download
-          </Link>
-          }
-          
-            {
-              isAuthenticated && (
-                <div className='flex items-center gap-4'>
-                  <img src={user.picture} alt={user.name} className='w-8 h-8 rounded-full'/>
-                  <h2>{user.name}</h2>
-                </div>
-              )
-            }
-
-            {
-            isAuthenticated ?(
-              <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className='className="w-20 h-8 rounded-lg bg-red-500 px-3'>
-            Log Out
-          </button>
-            ) : (
-              <button onClick={() => loginWithRedirect()} className="w-20 h-8 rounded-lg bg-red-500 px-3">
-            Log In
-          </button>
-            )
-          }
-          
+          {isAuthenticated && <Link to="/download" className="nav-link">Download</Link>}
+          {isAuthenticated && (
+            <div className='profile flex items-center gap-4'>
+              <img src={user.picture} alt={user.name} className='w-8 h-8 rounded-full' />
+              <h2>{user.name}</h2>
+            </div>
+          )}
+          {isAuthenticated ? (
+            <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className='log w-20 h-8 rounded-lg bg-red-500 px-3 text-sm'>
+              Log Out
+            </button>
+          ) : (
+            <button onClick={() => loginWithRedirect()} className="log w-20 h-8 rounded-lg bg-red-500 px-3 text-sm">
+              Log In
+            </button>
+          )}
         </nav>
       </div>
     </header>

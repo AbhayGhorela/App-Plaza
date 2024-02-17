@@ -11,6 +11,7 @@ function FeaturedAppSection() {
 
   const { loginWithRedirect,isAuthenticated} = useAuth0();
   const [appData, setAppData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,6 +32,8 @@ function FeaturedAppSection() {
           apps.push(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);
+        } finally {
+          setLoading(false); // Ensure loading indicator is turned off even in case of error
         }
       }
       setAppData(apps);
@@ -41,28 +44,34 @@ function FeaturedAppSection() {
 
   
   return (
-    <section className="bg-zinc-900 w-screen h-screen">
-      <div className='hero'>
+    <section className="main w-full h-full">
+      <div className='hero mt-12'>
         <img src={Logo} alt="logo" className=' hero-img'/>
         <h1 className='hero-h1'>Discover the perfect app for your needs.</h1>
         <h2 className='hero-h2'>Browse thousands of apps, categorized for easy discovery. Find popular picks, hidden gems, and exclusive offers.</h2>
       </div>
 
-      <div className="container mx-auto bg-white mt-10 p-10">
+      <div className="container-apps mx-2 bg-white mt-10 p-5">
         <h2 className="text-4xl font-bold mb-6 pl-8 pt-3">Apps</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {appData.map((app, index) => (
-            <AppCard key={index} {...app} />
-          ))}
-        </div>
+        <div>
+          {loading ? (
+            <p className="text-3xl font-bold animate-bounce text-blue-500 text-center">Loading...</p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {appData.map((app, index) => (
+                <AppCard key={index} {...app} />
+              ))}
+            </div>
+         )}
+         </div>
       </div>
 
-      <div className='Our-site'>
+      <div className='Our-site mx-2'>
         <h2 className='Os-h1'>Our Site</h2>
         <p className='Os-p'>App Plaza! As stewards of safe app browsing, we prioritize your security. Instead of offering direct download links, we redirect you to the official sources where you can securely download your desired apps. Trust in our dedication to providing a secure and reliable app discovery experience. Happy exploring!</p>
       </div>
 
-      <div className='download'>
+      <div className='download mx-2'>
         <h2 className='down-h1'>Download Now!</h2>
        
         {

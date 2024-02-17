@@ -5,13 +5,13 @@ import Logo from "../assets/logo.png";
 
 function AboutPage() {
   return (
-    <div className="main-div flex flex-col w-full h-full bg-gradient-to-r from-teal-200 to-teal-500 text-zinc-700 ">
-      <div className="container flex">
+    <div className="main-div-about flex flex-col w-full min-h-screen text-zinc-700 overflow-hidden">
+      <div className="container-about flex flex-col md:flex-row mt-16 md:mt-28">
         <div className="image w-full">
           <img
             src={About}
             alt="About img"
-            className="w-96 h-96 mx-auto drop-shadow-xl hover:drop-shadow-2xl"
+            className="about-people-img w-96 h-96 mx-auto"
           />
           <h2 className="font-bold text-xl mt-6 pl-5 ">
             Meet the Creator - Abhay Kumar Ghorela
@@ -27,7 +27,7 @@ function AboutPage() {
           <img
             src={Logo}
             alt="Logo"
-            className="w-80 h-80 mx-auto drop-shadow-xl hover:drop-shadow-2xl"
+            className="about-logo-img w-80 h-80 mx-auto "
           />
         </div>
 
@@ -52,7 +52,7 @@ function AboutPage() {
             enjoyable, efficient, and enriching.
           </p>
 
-          <h3 className="font-bold text-xl mt-48 pl-5">
+          <h3 className="font-bold text-xl md:mt-48 mt-8 pl-5">
             What Sets App Plaza Apart
           </h3>
           <ul className="font-lg text-xl p-5">
@@ -77,7 +77,7 @@ function AboutPage() {
           </ul>
         </div>
       </div>
-      <div className="mt-6 text-center font-xl">
+      <div className="join mt-6 text-center font-xl">
         <h1 className="font-bold text-4xl my-5">Join Us on the App Journey</h1>
         <p className="font-lg text-xl p-5">
           I invite you to embark on this app journey with us. Whether you're a
