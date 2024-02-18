@@ -28,7 +28,7 @@ function FeaturedAppSection() {
       const apps = [];
       for (let i = 0; i < 3; i++) {
         try {
-          const response = await axios.get('http://app-plaza-backend.vercel.app/api/getRandomAppData');
+          const response = await axios.get('https://app-plaza-backend.vercel.app/api/getRandomAppData');
           apps.push(response.data);
         } catch (error) {
           console.error('Error fetching data:', error);
