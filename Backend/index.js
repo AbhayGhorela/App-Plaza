@@ -6,7 +6,13 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors(
+  {
+    origin:["https://app-plaza.vercel.app"],
+    methods:["POST", "GET"],
+    credentials: true
+  }
+));
 
 // Import getRandomAppData function from scraper.js
 const { getRandomAppData } = require('./scraper');
