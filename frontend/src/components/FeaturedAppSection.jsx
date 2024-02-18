@@ -16,7 +16,7 @@ function FeaturedAppSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://app-plaza-backend.vercel.app/api/getRandomAppData');
+        const response = await axios.get('https://app-plaza-backend.vercel.app/api/getRandomAppData');
         setAppData([response.data]); // Wrap the response.data in an array
       } catch (error) {
         console.error('Error fetching data:', error);
