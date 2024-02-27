@@ -260,63 +260,124 @@ input[placeholder]{
 
 
 /* About us  */
-.main-div-about{
-  background-color: rgb(29, 3, 61);
+
+.about-page {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.about-people-img,.about-logo-img{
-  filter: drop-shadow(2px 4px 6px black);
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-:hover.about-logo-img{
-  filter: drop-shadow(2px 4px 7px black);
-}
-:hover.about-people-img{
-  filter: drop-shadow(2px 4px 7px black);
-}
-
-/* Media queries for responsiveness */
-@media (min-width: 768px) {
-  .image{
-    background-color: white;
-    border-radius: 30px 0 0 30px;
-    margin-left: 10px;
-  }
-
-  .about-us{
-    background-color: white;
-    border-radius: 0 30px 30px 0;
-    margin-right: 10px 
-  }
-
-  .join{
-    background-color: white;
-    border-radius: 30px 30px 0px 0px;
-    margin-left: 10px;
-    margin-right: 10px 
-  }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-  @media (max-width: 500px) {
-  .container-about{
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-
-  .image,.about-us{
-    border-radius: 30px;
-    background-color: white
-  }
-  .join{
-    border-radius: 30px 30px 0px 0px;
-    background-color: white;
-    margin-left: 12px;
-    margin-right: 12px;
-  }
-  .about-us{
-    margin-top: 15px;
-  }
+.left-section,
+.right-section {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
 }
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.about-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.about-description {
+  margin-bottom: 30px;
+}
+
+.vision-title,
+.founders-title,
+description-title,
+.components-title,
+.benefits-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icon {
+  color: #555;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #007bff;
+}
+
+.founder {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.founder-img {
+  width: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.founder-name {
+  font-size: 18px;
+}
+
+.founder-role {
+  margin-bottom: 10px;
+}
+
+.connect-title {
+  margin-bottom: 10px;
+}
+
+.founder-description {
+  margin-top: 30px;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.components {
+  padding-left: 20px;
+}
+
+.component {
+  margin-bottom: 10px;
+}
+
+.about-image {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.benefits {
+  padding-left: 20px;
+}
+
+.benefit {
+  margin-bottom: 10px;
+}
+
 
 /* download app section  */
 .main-section-download{

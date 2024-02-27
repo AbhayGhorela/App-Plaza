@@ -36,12 +36,12 @@ function Header() {
           <Link to="/contact" className="nav-link">
             Contact
           </Link>
-          {isAuthenticated && <Link to="/download" className="nav-link">Download</Link>}
+          
+          {isAuthenticated && <Link to="/download" className="nav-link">Apps</Link>}
           {isAuthenticated && (
-            <div className='profile flex items-center gap-4'>
-              <img src={user.picture} alt={user.name} className='w-8 h-8 rounded-full' />
-              <h2>{user.name}</h2>
-            </div>
+            <Link to="/profile" className="nav-link">
+            Profile
+          </Link>
           )}
           {isAuthenticated ? (
             <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className='log w-20 h-8 rounded-lg bg-red-500 px-3 text-sm'>

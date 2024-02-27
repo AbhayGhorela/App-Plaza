@@ -1,95 +1,239 @@
-// AboutPage.jsx
 import React from "react";
-import About from "../assets/about.png";
+import AboutImage from "../assets/about.png";
 import Logo from "../assets/logo.png";
+import AbhayImg from "../assets/abhay.jpg";
+import KrishanImg from "../assets/krishan.jpg";
+import { FaInstagram, FaTwitter, FaFacebook } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 function AboutPage() {
+
   return (
-    <div className="main-div-about flex flex-col w-full min-h-screen text-zinc-700 overflow-hidden">
-      <div className="container-about flex flex-col md:flex-row mt-16 md:mt-28">
-        <div className="image w-full">
-          <img
-            src={About}
-            alt="About img"
-            className="about-people-img w-96 h-96 mx-auto"
-          />
-          <h2 className="font-bold text-xl mt-6 pl-5 ">
-            Meet the Creator - Abhay Kumar Ghorela
-          </h2>
-          <p className="font-lg text-xl p-5">
-            Hello, I'm Abhay Kumar Ghorela, with partner Krishan Kumawat the driving force behind App Plaza.
-            With a passion for technology and a vision to simplify the process
-            of discovering and acquiring apps, I founded this platform. My aim
-            is to provide a seamless experience for users seeking reliable and
-            innovative applications.
-          </p>
-
-          <img
-            src={Logo}
-            alt="Logo"
-            className="about-logo-img w-80 h-80 mx-auto "
-          />
-        </div>
-
-        <div className="about-us w-full">
-          <h1 className="font-bold text-4xl text-center mt-5">
-            About App Plaza
-          </h1>
-          <p className="font-lg text-xl p-5">
-            Welcome to App Plaza! Your go-to destination for discovering and
-            downloading a wide array of applications curated just for you. I'm
-            Abhay Kumar Ghorela, the creator of this platform, and I'm thrilled
-            to share the story behind App Plaza.
-          </p>
-
-          <h2 className="font-bold text-xl mt-3 pl-5">Our Vision</h2>
-          <p className="font-lg text-xl p-5">
-            At App Plaza, we believe in the power of technology to enhance our
-            lives. Our vision is to create a one-stop destination where users
-            can explore, discover, and download a diverse range of applications
-            tailored to their needs. We understand the importance of having
-            access to quality apps that make your digital experience more
-            enjoyable, efficient, and enriching.
-          </p>
-
-          <h3 className="font-bold text-xl md:mt-48 mt-8 pl-5">
-            What Sets App Plaza Apart
-          </h3>
-          <ul className="font-lg text-xl p-5">
-            <li>
-              <span className="font-bold text">Curated Selection:</span> We
-              meticulously curate our app collection to ensure you have access
-              to the best and most relevant applications across various
-              categories.
-            </li>
-            <li>
-              <span className="font-bold text">User-Friendly Interface:</span>{" "}
-              Navigating through App Plaza is a breeze. Our user-friendly
-              interface is designed to make your app discovery process enjoyable
-              and straightforward.
-            </li>
-            <li>
-              <span className="font-bold text">Constant Updates</span>: We stay
-              on top of the latest trends and updates in the app world. Expect
-              regular additions to our collection, keeping you in the loop with
-              the newest and most exciting applications.
-            </li>
-          </ul>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="bg-black text-white min-h-screen overflow-hidden"
+    >
+      <div className="container mx-auto py-12 px-4 hover:font-serif">
+        <div className="flex flex-col md:flex-row gap-8 justify-center items-center pt-12">
+          {/* Left Section */}
+          <div className="mb-8 md:mb-0 w-full md:w-1/2">
+            <motion.h1
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl font-bold mb-3 pl-2 text-center"
+            >
+              Welcome to AppPlaza!
+              <motion.img
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 2 }}
+                src={Logo}
+                alt="Logo"
+                className="w-44 h-44 mx-auto"
+              />
+            </motion.h1>
+            <motion.p
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-lg mb-6"
+            >
+              At AppPlaza, we're dedicated to providing you with a seamless and secure experience when it comes to discovering and downloading apps for your devices. Whether you're an avid gamer, a productivity enthusiast, or simply looking for new tools to enhance your digital life, we've got you covered.
+            </motion.p>
+            <motion.h2
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-2xl font-bold mb-2"
+            >
+              Our Vision
+            </motion.h2>
+            <motion.p
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-lg mb-6"
+            >
+              Our vision at AppPlaza is to become your go-to destination for all your app needs. We strive to curate a diverse collection of high-quality apps across various categories, ensuring that you find exactly what you're looking for, no matter your interests or preferences. Our ultimate goal is to simplify the app discovery process while prioritizing safety and user satisfaction.
+            </motion.p>
+            <motion.h2
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="text-2xl font-bold mb-2"
+            >
+              Meet the Founders
+            </motion.h2>
+            <div className="flex items-center mb-6">
+              <img
+                src={AbhayImg}
+                alt="Abhay Kumar Ghorela"
+                className="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <motion.h3
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1 }}
+                  className="text-lg font-semibold"
+                >
+                  Abhay Kumar Ghorela
+                </motion.h3>
+                <motion.p
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.2 }}
+                >
+                  Founder & CEO
+                </motion.p>
+                <div className="text-start md:text-left mb-4 md:mb-0">
+                  <h3 className="text-xl font-bold mb-2">Connect with Us</h3>
+                  <div className="flex justify-center md:justify-start">
+                    <a
+                      href="#"
+                      className="mr-4 hover:text-gray-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaTwitter />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/abhay.ghorela.7/"
+                      className="mr-4 hover:text-gray-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaFacebook />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/abhi.kumar_330/"
+                      className="hover:text-gray-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaInstagram />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center mb-6">
+              <img
+                src={KrishanImg}
+                alt="Krishan Kumawat"
+                className="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <motion.h3
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.4 }}
+                  className="text-lg font-semibold"
+                >
+                  Krishan Kumawat
+                </motion.h3>
+                <motion.p
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 1.6 }}
+                >
+                  Co-founder & CTO
+                </motion.p>
+                <div className="text-start md:text-left mb-4 md:mb-0">
+                  <h3 className="text-xl font-bold mb-2">Connect with Us</h3>
+                  <div className="flex justify-center md:justify-start">
+                    <a
+                      href="#"
+                      className="mr-4 hover:text-gray-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaTwitter />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/krishakumawat207/"
+                      className="mr-4 hover:text-gray-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaFacebook />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/krishana_207/"
+                      className="hover:text-gray-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaInstagram />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <motion.p
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 1.8 }}
+              className="text-lg mb-8"
+            >
+              Hi there! I'm Abhay Kumar Ghorela, the founder and creator of AppPlaza. and Krishan Kumawat, Co-founder With a passion for technology and a deep understanding of the importance of safe and reliable app downloads, I embarked on this journey to provide users like you with a trustworthy platform to explore and download apps with confidence. I believe in the power of innovation and accessibility, and I'm committed to continuously improving AppPlaza to meet your evolving needs.
+            </motion.p>
+          </div>
+          {/* Right Section */}
+          <div className="relative w-full md:w-1/2 px-3">
+            <motion.img
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 2 }}
+              src={AboutImage}
+              alt="About us image"
+              className="w-full h-auto mx-auto md:mx-0"
+            />
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-red-500 to-pink-500 opacity-40 rounded-[40px]"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-transparent to-black animate-gradient opacity-40"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-transparent to-black animate-gradient opacity-40"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent via-transparent to-black animate-gradient opacity-40"></div>
+            <h2 className="text-blue text-2xl font-bold mb-4">Description:</h2>
+            <p className="text-lg mb-6 ">
+            Welcome to AppPlaza, your trusted hub for safe app downloads. AppPlaza offers a curated selection of apps from reputable sources like the Google Play Store. Our user-friendly interface and regular updates ensure a seamless app discovery experience. Join us and explore a world of apps with confidence at AppPlaza.
+            </p>
+            <h2 className="text-2xl font-bold mb-4">
+              Key Components:
+            </h2>
+            <ol className="mb-6 hidden md:block">
+              <li className="text-lg mb-4">
+              User-Friendly Interface: Navigating through AppPlaza is a breeze. Our intuitive interface makes it easy for you to browse through categories, search for specific apps, and find recommendations tailored to your interests.
+              </li>
+              <li className="text-lg mb-4">
+              Regular Updates: We're constantly updating our app library to bring you the latest and greatest offerings from the world of apps. Be sure to check back regularly to discover new gems and must-have downloads.
+              </li>
+            </ol>
+            {/* <motion.img
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 3, delay: 1 }}
+              src={AboutImage}
+              alt="About us image"
+              className="w-full h-auto mx-auto mb-6"
+            /> */}
+            <ul>
+              <li className="text-lg mb-4">
+                Time Savings: Users save time by not having to manually search
+                for relevant apps, as the platform intelligently surfaces
+                recommendations based on their individual preferences and
+                behavior.
+              </li>
+              <li className="text-lg mb-6">
+              Community Engagement: Your feedback matters to us. We welcome your suggestions, comments, and ideas for improving AppPlaza. Together, we can make this platform even better.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div className="join mt-6 text-center font-xl">
-        <h1 className="font-bold text-4xl my-5">Join Us on the App Journey</h1>
-        <p className="font-lg text-xl p-5">
-          I invite you to embark on this app journey with us. Whether you're a
-          tech enthusiast, a casual user, or someone looking for specific tools,
-          App Plaza is here to cater to your app needs. Thank you for being a
-          part of our community, and we look forward to enhancing your digital
-          experience.
-          <p className="font-bold pt-5">Abhay Kumar Ghorela</p>
-          <p className="font-lg">Founder, App Plaza</p>
-        </p>
-      </div>
-    </div>
+    </motion.div>
   );
 }
 

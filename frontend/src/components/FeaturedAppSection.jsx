@@ -6,6 +6,7 @@ import Logo from '../assets/logo.png'
 import { Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import './style.css'
+import { motion } from "framer-motion";
 
 function FeaturedAppSection() {
 
@@ -47,8 +48,41 @@ function FeaturedAppSection() {
     <section className="main w-full h-full">
       <div className='hero mt-12'>
         <img src={Logo} alt="logo" className=' hero-img'/>
-        <h1 className='hero-h1'>Discover the perfect app for your needs.</h1>
-        <h2 className='hero-h2'>Browse thousands of apps, categorized for easy discovery. Find popular picks, hidden gems, and exclusive offers.</h2>
+        <motion.h1
+          initial={{
+            x: -135,
+            opacity: 0,
+          }}
+          whileInView={{
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="hero-h1"
+        >
+          Discover the perfect app for your needs.
+        </motion.h1>
+        <motion.h2
+          initial={{
+            x: -135,
+            opacity: 0.3,
+          }}
+          whileInView={{
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.5,
+            ease: "linear",
+          }}
+          className="hero-h2"
+        >
+          Browse thousands of apps, categorized for easy discovery. Find popular
+          picks, hidden gems, and exclusive offers.
+        </motion.h2>
       </div>
 
       <div className="container-apps mx-2 bg-white mt-10 p-5">
@@ -73,6 +107,7 @@ function FeaturedAppSection() {
 
       <div className='download mx-2'>
         <h2 className='down-h1'>Download Now!</h2>
+        <p className='p-2 text-center'>Download your needed apps from here and these are completely safe apps listed.</p>
        
         {
             isAuthenticated ?(
