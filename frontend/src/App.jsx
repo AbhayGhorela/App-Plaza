@@ -7,6 +7,7 @@ import DownloadSection from './components/DownloadSection';
 import Footer from './components/Footer';
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
+import Profile from './components/Profile';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/download" element={<DownloadSection />} />
+          <Route path="/profile" element={<Profile />} />
           <Route
             path="/"
             element={

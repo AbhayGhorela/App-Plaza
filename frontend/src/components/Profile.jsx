@@ -72,8 +72,8 @@ function Profile() {
           className="w-32 h-32 rounded-full mx-auto mb-4"
         />
 
-        <h4 className="text-gray-600">@User ID</h4>
-        <p className="text-gray-600">Email Id</p>
+        <h4 className="text-gray-600">{user.name.split("@")[0]}</h4>
+        <p className="text-gray-600">{user.email}</p>
 
         {/* Bio editor */}
         <textarea
