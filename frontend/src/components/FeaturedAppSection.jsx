@@ -45,7 +45,7 @@ function FeaturedAppSection() {
 
   
   return (
-    <section className="main w-full h-full bg-gray-900">
+    <section className="main w-full h-full">
       <div className='hero mt-12'>
         <img src={Logo} alt="logo" className=' hero-img'/>
         <motion.h1
