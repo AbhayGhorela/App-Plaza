@@ -5,7 +5,7 @@
 /* contact page */
 
 .container-contact{
-  background-color: rgb(29, 3, 61);
+  /* background-color: rgb(29, 3, 61); */
 }
 textarea[placeholder]{
     padding-left: 15px;
@@ -18,7 +18,7 @@ input[placeholder]{
 /* featured app section */
 .main{
   overflow-x: hidden;
-  background-color: rgb(29, 3, 61);
+  /* background-color: rgb(29, 3, 61); */
 }
 
 .hero{
@@ -380,6 +380,6 @@ description-title,
 
 
 /* download app section  */
-.main-section-download{
+/* .main-section-download{
   background-color: rgb(29, 3, 61);
-}
+} */

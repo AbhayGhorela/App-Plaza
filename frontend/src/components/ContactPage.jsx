@@ -7,20 +7,33 @@ import { motion } from "framer-motion"; // Import motion from Framer Motion
 function ContactPage() {
   return (
     <motion.div
-      className="container-contact w-full min-h-screen mx-auto flex justify-center items-center"
+      className="container-contact w-full min-h-screen mx-auto flex justify-center items-center bg-gray-900"
       initial={{ opacity: 0 }} // Set initial opacity to 0
       animate={{ opacity: 6 }} // Animate opacity to 1
       transition={{ duration: 0.1 }} // Set transition duration
     >
-      <motion.div className="w-full md:w-5/6 xl:w-4/6 bg-white mt-12 md:mt-16 lg:mt-24 rounded-lg flex flex-col md:flex-row justify-center items-center shadow-lg"
-      whileHover={{ scale: 1.05 }} // Scale up on hover
-      whileTap={{ scale: 0.95 }} // Scale down on tap
+      <div className="w-full md:w-5/6 xl:w-4/6 bg-white mt-12 md:mt-16 lg:mt-24 rounded-lg flex flex-col md:flex-row justify-center items-center shadow-lg"
+      
       >
         <div className="mail-svg w-full md:w-2/5">
           {/* contact image */}
           <img src={Contact} alt="contact image" className="w-full h-auto" />
         </div>
-        <div className="w-full md:w-3/5 flex flex-col justify-center items-center px-6 md:px-10 lg:px-12 py-8 md:py-10">
+        <motion.div
+          initial={{
+            x: -135,
+            opacity: 0,
+          }}
+          whileInView={{
+            x: 0,
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          
+        className="w-full md:w-3/5 flex flex-col justify-center items-center px-6 md:px-10 lg:px-12 py-8 md:py-10">
           <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-center mb-6 md:mb-8 lg:mb-10 ">Get in touch</h1>
           <form
             action="https://public.herotofu.com/v1/16c2ee80-c0ed-11ee-ae4a-bb6f42d3fd75"
@@ -62,8 +75,8 @@ function ContactPage() {
             </div>
             
           </form>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </motion.div>
   );
 }

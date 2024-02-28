@@ -27,7 +27,7 @@ function DownloadSection() {
   }, []);
 
   return (
-    <section className="main-section-download py-12 w-full min-h-screen">
+    <section className="main-section-download py-12 w-full min-h-screen bg-gray-900">
       <div className="container mx-auto text-center mt-20 px-3">
         <h2 className="text-3xl font-bold mb-6 text-white">Download Our App Today!</h2>
         <div className=''>

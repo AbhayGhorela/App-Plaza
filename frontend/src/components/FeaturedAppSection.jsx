@@ -45,7 +45,7 @@ function FeaturedAppSection() {
 
   
   return (
-    <section className="main w-full h-full">
+    <section className="main w-full h-full bg-gray-900">
       <div className='hero mt-12'>
         <img src={Logo} alt="logo" className=' hero-img'/>
         <motion.h1
@@ -100,14 +100,14 @@ function FeaturedAppSection() {
          </div>
       </div>
 
-      <div className='Our-site mx-2'>
+      <div className='Our-site mx-2 font-semibold'>
         <h2 className='Os-h1'>Our Site</h2>
         <p className='Os-p'>App Plaza! As stewards of safe app browsing, we prioritize your security. Instead of offering direct download links, we redirect you to the official sources where you can securely download your desired apps. Trust in our dedication to providing a secure and reliable app discovery experience. Happy exploring!</p>
       </div>
 
       <div className='download mx-2'>
         <h2 className='down-h1'>Download Now!</h2>
-        <p className='p-2 text-center'>Download your needed apps from here and these are completely safe apps listed.</p>
+        <p className='p-2 text-center font-semibold'>Download your needed apps from here and these are completely safe apps listed.</p>
        
         {
             isAuthenticated ?(
